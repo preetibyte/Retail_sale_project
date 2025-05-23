@@ -22,7 +22,7 @@ This project is designed to demonstrate SQL skills and techniques typically used
 CREATE DATABASE retail_sale_project;
 
 CREATE TABLE mytable (
-		transactions_id INT PRIMARY KEY ,
+	transactions_id INT PRIMARY KEY ,
         sale_date DATE,
         sale_time	TIME,
         customer_id	INT,
@@ -44,8 +44,15 @@ CREATE TABLE mytable (
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
 ```sql
+Data Exploration
+
+How many sales we have?
 SELECT COUNT(*) as total_sales FROM mytable;
+
+How many unique customers we have?
 SELECT COUNT(DISTINCT customer_id) FROM mytable;
+
+How many category they have?
 SELECT DISTINCT category FROM mytable;
 SELECT COUNT(DISTINCT category) FROM mytable;
 
@@ -56,21 +63,21 @@ SELECT * FROM mytable
 		transactions_id IS NULL
 	OR
 		sale_date IS NULL
-    OR
+    	OR
 		sale_time IS NULL
-    OR
+    	OR
 		customer_id IS NULL
-    OR
+    	OR
 		gender IS NULL
-    OR
+    	OR
 		category IS NULL
 	OR
 		quantiy IS NULL
-    OR
+    	OR
 		price_per_unit IS NULL
-    OR
+    	OR
 		cogs IS NULL
-    OR
+    	OR
 		total_sale IS NULL
 
 DELETE FROM mytable
@@ -78,19 +85,19 @@ WHERE
 		transactions_id IS NULL
 	OR
 		sale_date IS NULL
-    OR
+    	OR
 		sale_time IS NULL
-    OR
+	OR
 		customer_id IS NULL
-    OR
+    	OR
 		gender IS NULL
-    OR
+    	OR
 		category IS NULL
 	OR
 		price_per_unit IS NULL
-    OR
+    	OR
 		cogs IS NULL
-    OR
+    	OR
 		total_sale IS NULL
 	OR
 		quantiy IS NULL
